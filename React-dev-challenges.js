@@ -1,6 +1,13 @@
-// 1. How react renders browser page - Render & Commit < Adding Interactivity lesson
+//1. How react renders browser page - Render & Commit < Adding Interactivity lesson
 //2. treat any JavaScript object/variable that you put into state as read-only
+//3. Update Objects in state < adding interactivity
+setPerson({
+  ...person, // Copy the old fields
+  firstName: e.target.value // But override this one
+});
 
+
+//-------------------------------------------------------------
 'use client'
 
 import { useState } from 'react';
@@ -14,7 +21,7 @@ function Gallery(){
     let hasPrev = index > 0;
     let hasNext = index < sculptureList.length-1;
 
-    function handleNextClick(){
+    export default function handleNextClick(){
         if (hasNext){
         setIndex(index+1);
     }
@@ -47,14 +54,6 @@ function Gallery(){
       </>
     )
 }
-
-export default function BigGallery(){
-    return(
-        <div>
-            <Gallery />
-            {/* <Gallery /> */}
-        </div>
-    )
 }
 
 //Next--------------------------------------------------------------
@@ -96,62 +95,7 @@ export default function Gallery() {
       awards={["Nobel Prize in Physics", "Nobel Prize in Chemistry", "Davy Medal", "Matteucci Medal"]} 
       discovered={"polonium (chemical element)"}  
       />
-
-      {/* <Profile name={"Maria Skłodowska-Curie"} src={"YfeOqp2"} profession={"physicist and chemist"} 
-      awards={"(Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal, Matteucci Medal)"} 
-      discovered={"polonium (chemical element)"}  
-      /> */}
-
-      <section className="profile">
-        <h2>Maria Skłodowska-Curie</h2>
-        <img
-          className="avatar"
-          src={getImageUrl('szV5sdG')}
-          alt="Maria Skłodowska-Curie"
-          width={70}
-          height={70}
-        />
-        <ul>
-          <li>
-            <b>Profession: </b> 
-            physicist and chemist
-          </li>
-          <li>
-            <b>Awards: 4 </b> 
-            (Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal, Matteucci Medal)
-          </li>
-          <li>
-            <b>Discovered: </b>
-            polonium (chemical element)
-          </li>
-        </ul>
-      </section>
-
-      <section className="profile">
-        <h2>Katsuko Saruhashi</h2>
-        <img
-          className="avatar"
-          src={getImageUrl('YfeOqp2')}
-          alt="Katsuko Saruhashi"
-          width={70}
-          height={70}
-        />
-        <ul>
-          <li>
-            <b>Profession: </b> 
-            geochemist
-          </li>
-          <li>
-            <b>Awards: 2 </b> 
-            (Miyake Prize for geochemistry, Tanaka Prize)
-          </li>
-          <li>
-            <b>Discovered: </b>
-            a method for measuring carbon dioxide in seawater
-          </li>
-        </ul>
-      </section>
-    </div>
+   </div>
   );
 }
 
