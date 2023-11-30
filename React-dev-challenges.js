@@ -1,3 +1,5 @@
+// 1. How react renders browser page - Render & Commit < Adding Interactivity lesson
+
 'use client'
 
 import { useState } from 'react';
@@ -151,3 +153,23 @@ export default function Gallery() {
     </div>
   );
 }
+
+        //=====================================================
+
+
+import { useState } from 'react';
+
+export default function Counter() {
+  const [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>{number}</h1>
+      <button onClick={() => {
+        setNumber(number + 5);
+        setNumber(n => n + 1);   //Updater function, updates the previous setNumber 
+      }}>Increase the number</button>
+    </>
+  )
+}
+//Output: 6 : 
