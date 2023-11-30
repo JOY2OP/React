@@ -1,4 +1,5 @@
 // 1. How react renders browser page - Render & Commit < Adding Interactivity lesson
+//2. treat any JavaScript object/variable that you put into state as read-only
 
 'use client'
 
