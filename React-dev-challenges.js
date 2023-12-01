@@ -99,7 +99,7 @@ export default function Gallery() {
   );
 }
 
-        //=====================================================
+//=====================================================
 
 
 import { useState } from 'react';
@@ -118,3 +118,27 @@ export default function Counter() {
   )
 }
 //Output: 6 : 
+
+//=====================================================
+
+export default function form(){
+const [message, setMessage ] = useState('')
+const [option, setOption] = useState('Alice')
+    function handleSubmit(e){
+        alert(`You said ${message} to ${option}`)
+    }
+
+    return(
+        <form onSubmit={handleSubmit}>
+        <label>To:{' '}</label>
+            <select onChange={e => setOption(e.target.value)}>
+                <option>Alice</option>
+                <option>Bob</option>
+            </select> <br />
+            <textarea onChange={e => setMessage(e.target.value)}/> <br />
+            <button>Send</button>
+        </form>
+    )
+}
+
+  //Say {message} to Alice/Bob
