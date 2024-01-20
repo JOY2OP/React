@@ -1,0 +1,21 @@
+
+import React from 'react';
+import {useState} from 'react';
+import './App.css';
+
+export default function App() {
+  const [color,setColor]  = useState('olive');
+
+  return (
+    <div className="container" style={{backgroundColor: color}}>
+      
+      <h1>BG changer app</h1>
+      <div className="btn-set">
+        <button className="blue-btn" onClick = {() => setColor('blue')}> Blue </button>
+        <button className="red-btn" onClick = {() => setColor('red')}> Red </button>
+        <button className="green-btn" onClick = {() => setColor('green')}> Green </button>
+      </div>
+    </div>
+  );
+}
+
