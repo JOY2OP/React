@@ -2,7 +2,7 @@ import React from 'react';
 import {useState, useCallback, useEffect, useRef} from 'react';
 import './App.css';
 
-export default function App() {
+export default function App(){
   const [password, setPassword]  = useState('');
   const [length, setLength] = useState(6)
   const [numberAllowed, setNumberAllowed] = useState(false);
